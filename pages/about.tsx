@@ -31,10 +31,21 @@ const AboutPage = () => {
 
 	return (
 		<Layout title='About | Next.js + TypeScript Example'>
+			<img
+				src='./images/background.png'
+				style={{
+					minHeight: '100%',
+					minWidth: '1024',
+					width: '100%',
+					height: 'auto',
+					position: 'fixed',
+					top: 0,
+					left: 0,
+					zIndex: -1,
+				}}></img>
 			<h1>About</h1>
 			<span ref={paragraphRef} id='typed-text'></span>
 			<p ref={paragraph2Ref} id='typed-text2'></p>
-
 			<p>
 				<Link href='/'>
 					<a>Go home</a>
