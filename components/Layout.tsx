@@ -16,13 +16,19 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 			<link rel='stylesheet' href='styles.css' />
 		</Head>
 		<header>
-			<nav className={classes.nav_bar}>
+			<nav className={`${classes.nav_bar} ${classes.green}`}>
 				<Link href='/'>
-					<a className={classes.nav_item}>Home</a>
-				</Link>{' '}
+					<a className={classes.nav_item + ' ' + classes.active}>Home</a>
+				</Link>
 				<Link href='/about'>
-					<a>About</a>
-				</Link>{' '}
+					<a className={classes.nav_item}>About me</a>
+				</Link>
+				<Link href='/blog'>
+					<a className={classes.nav_item}>Blog</a>
+				</Link>
+				<Link href='/contact'>
+					<a className={classes.nav_item}>Contact</a>
+				</Link>
 			</nav>
 		</header>
 		{children}

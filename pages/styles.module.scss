@@ -42,3 +42,23 @@ $breakpoints: (
 	// 	z-index: 1;
 	// }
 }
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.15;
+	background-color: black;
+	z-index: -1;
+}
+
+.greeting {
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5em;
+	width: 9.5em;
+	margin: auto;
+	margin-top: 20%;
+}

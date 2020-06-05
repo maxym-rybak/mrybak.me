@@ -10,8 +10,8 @@ const IndexPage: React.FC = () => {
 
 	React.useEffect(() => {
 		const options: TypedOptions = {
-			strings: ['This is the about page'],
-			typeSpeed: 50,
+			strings: [`Hello, I'm Maxym`],
+			typeSpeed: 60,
 			startDelay: 500,
 			showCursor: false,
 		}
@@ -19,8 +19,8 @@ const IndexPage: React.FC = () => {
 			new Typed(paragraphRef.current?.tagName, options)
 		}
 		const options2: TypedOptions = {
-			strings: ['Second paragraph'],
-			typeSpeed: 50,
+			strings: ['FULL-STACK WEB DEVELOPER'],
+			typeSpeed: 60,
 			startDelay: 2000,
 			showCursor: false,
 		}
@@ -33,9 +33,11 @@ const IndexPage: React.FC = () => {
 	return (
 		<Layout title='Maxym Rybak personal page'>
 			<img src='/images/background.jpg' className={classes.full_screan_img}></img>
-			<h1>About</h1>
-			<span ref={paragraphRef} id='typed-text'></span>
-			<p ref={paragraph2Ref} id='typed-text2'></p>
+			<div className={classes.backdrop} />
+			<div className={classes.greeting}>
+				<span ref={paragraphRef} id='typed-text'></span>
+				<p ref={paragraph2Ref} id='typed-text2'></p>
+			</div>
 		</Layout>
 	)
 }

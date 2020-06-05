@@ -1,6 +1,15 @@
 .nav_bar {
-	background-color: red;
+	display: flex;
+	justify-content: flex-end;
+	margin: 1em;
 	.nav_item {
-		color: green;
+		margin: 0.5em;
+		text-decoration: none;
+		padding: 0.2em;
+		color: white;
+		text-transform: uppercase;
+	}
+	.active {
+		border-bottom: 2px solid white;
 	}
 }
