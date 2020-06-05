@@ -56,9 +56,19 @@ $breakpoints: (
 
 .greeting {
 	color: white;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Montserrat;
 	font-size: 1.5em;
 	width: 9.5em;
 	margin: auto;
 	margin-top: 20%;
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: Montserrat-Thin;
+	src: url('../public/fonts/Montserrat/Montserrat-Thin.ttf');
+}
+@font-face {
+	font-family: Montserrat-Bold;
+	src: url('../public/fonts/Montserrat/Montserrat-Bold.ttf');
 }
