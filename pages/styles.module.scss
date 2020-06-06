@@ -1,12 +1,12 @@
 $breakpoints: (
+	'small': (
+		max-width: 640px,
+	),
 	'medium': (
-		min-width: 800px,
+		max-width: 1024px,
 	),
 	'large': (
-		min-width: 1000px,
-	),
-	'huge': (
-		min-width: 1200px,
+		min-width: 1920px,
 	),
 );
 
@@ -37,10 +37,10 @@ $breakpoints: (
 	top: 0;
 	left: 0;
 	z-index: -1;
-	// @include respond-to('medium') {
-	// 	color: blue;
-	// 	z-index: 1;
-	// }
+	@include respond-to('medium') {
+		left: 50%;
+		margin-left: -512px;
+	}
 }
 
 .backdrop {
@@ -49,24 +49,23 @@ $breakpoints: (
 	left: 0;
 	right: 0;
 	bottom: 0;
-	opacity: 0.15;
-	background-color: black;
+	opacity: 0.2;
+	background-color: #125aa5;
 	z-index: -1;
 }
 
 .greeting {
 	color: white;
-	font-family: Montserrat;
+	font-family: Montserrat-Light;
 	font-size: 1.5em;
 	width: 9.5em;
 	margin: auto;
-	margin-top: 20%;
-	font-weight: bold;
+	margin-top: 25vh;
 }
 
 @font-face {
-	font-family: Montserrat-Thin;
-	src: url('../public/fonts/Montserrat/Montserrat-Thin.ttf');
+	font-family: Montserrat-Light;
+	src: url('../public/fonts/Montserrat/Montserrat-Light.ttf');
 }
 @font-face {
 	font-family: Montserrat-Bold;
