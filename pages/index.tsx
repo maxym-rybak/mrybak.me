@@ -2,16 +2,17 @@ import React from 'react'
 import Typed, { TypedOptions } from 'typed.js'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import classes from './styles.module.scss'
+import styles from './styles'
 
 const IndexPage: React.FC = () => {
 	const paragraphRef = React.useRef<HTMLParagraphElement>(null)
 	const paragraph2Ref = React.useRef<HTMLParagraphElement>(null)
+	const cl = styles()
 
 	React.useEffect(() => {
 		const options: TypedOptions = {
-			strings: ['This is the about page'],
-			typeSpeed: 50,
+			strings: [`Hello, I'm Maxym`],
+			typeSpeed: 60,
 			startDelay: 500,
 			showCursor: false,
 		}
@@ -19,8 +20,8 @@ const IndexPage: React.FC = () => {
 			new Typed(paragraphRef.current?.tagName, options)
 		}
 		const options2: TypedOptions = {
-			strings: ['Second paragraph'],
-			typeSpeed: 50,
+			strings: ['FULL-STACK WEB DEVELOPER'],
+			typeSpeed: 60,
 			startDelay: 2000,
 			showCursor: false,
 		}
@@ -32,10 +33,12 @@ const IndexPage: React.FC = () => {
 
 	return (
 		<Layout title='Maxym Rybak personal page'>
-			<img src='/images/background.jpg' className={classes.full_screan_img}></img>
-			<h1>About</h1>
-			<span ref={paragraphRef} id='typed-text'></span>
-			<p ref={paragraph2Ref} id='typed-text2'></p>
+			<img src='/images/background.jpg' className={cl.fullScreanImg}></img>
+			<div className={cl.backdrop} />
+			<div className={cl.greeting}>
+				<span ref={paragraphRef} id='typed-text'></span>
+				<p ref={paragraph2Ref} id='typed-text2'></p>
+			</div>
 		</Layout>
 	)
 }
