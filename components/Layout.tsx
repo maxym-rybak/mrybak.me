@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
-import useTheme from './theme'
+import theme from '../pages/theme'
 import makeStyles from './styles'
 
 type Props = {
@@ -11,7 +11,6 @@ type Props = {
 }
 
 const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the default title' }) => {
-	const theme = useTheme()
 	const cl = makeStyles()
 	return (
 		<ThemeProvider theme={theme}>
@@ -21,7 +20,6 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 				<title>{title}</title>
 				<meta charSet='utf-8' />
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-				<link rel='stylesheet' href='styles.css' />
 			</Head>
 			<header>
 				<nav className={cl.navBar}>

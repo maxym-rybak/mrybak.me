@@ -4,4 +4,4 @@ const useTheme = (): Theme => {
 	return createMuiTheme()
 }
 
-export default useTheme
+export default useTheme()
