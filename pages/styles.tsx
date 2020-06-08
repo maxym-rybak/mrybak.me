@@ -28,7 +28,6 @@ const styles = makeStyles((theme: Theme) =>
 		},
 		greeting: {
 			color: 'white',
-			fontFamily: 'Montserrat-Light',
 			fontSize: '1.5em',
 			width: '9.5em',
 			margin: 'auto',
