@@ -1,7 +1,27 @@
 import { createMuiTheme, Theme } from '@material-ui/core/styles'
 
 const useTheme = (): Theme => {
-	return createMuiTheme()
+	return createMuiTheme({
+		typography: {
+			fontFamily: ['Montserrat-Medium', 'Roboto', '"Helvetica Neue"', 'sans-serif'].join(','),
+		},
+		overrides: {
+			MuiCssBaseline: {
+				'@global': {
+					'@font-face': [
+						{
+							fontFamily: 'Montserrat-Light',
+							src: 'url(/fonts/Montserrat/Montserrat-Light.ttf)',
+						},
+						{
+							fontFamily: 'Montserrat-Medium',
+							src: 'url(/fonts/Montserrat/Montserrat-Medium.ttf)',
+						},
+					],
+				},
+			},
+		},
+	})
 }
 
 export default useTheme()
