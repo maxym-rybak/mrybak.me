@@ -14,31 +14,31 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 	const cl = makeStyles()
 	return (
 		<ThemeProvider theme={theme}>
-		<CssBaseline />
-		<div>
-			<Head>
-				<title>{title}</title>
-				<meta charSet='utf-8' />
-				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-			</Head>
-			<header>
-				<nav className={cl.navBar}>
-					<Link href='/'>
-						<a className={`${cl.navItem} ${cl.active}`}>Home</a>
-					</Link>
-					<Link href='/about'>
-						<a className={cl.navItem}>About me</a>
-					</Link>
-					<Link href='/blog'>
-						<a className={cl.navItem}>Blog</a>
-					</Link>
-					<Link href='/contact'>
-						<a className={cl.navItem}>Contact</a>
-					</Link>
-				</nav>
-			</header>
-			{children}
-		</div>
+			<CssBaseline />
+			<div>
+				<Head>
+					<title>{title}</title>
+					<meta charSet='utf-8' />
+					<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+				</Head>
+				<header>
+					<nav className={cl.navBar}>
+						<Link href='/'>
+							<a className={`${cl.navItem} ${cl.active}`}>Home</a>
+						</Link>
+						<Link href='/about'>
+							<a className={cl.navItem}>About</a>
+						</Link>
+						<Link href='/blog'>
+							<a className={cl.navItem}>Blog</a>
+						</Link>
+						<Link href='/contact'>
+							<a className={cl.navItem}>Contact</a>
+						</Link>
+					</nav>
+				</header>
+				{children}
+			</div>
 		</ThemeProvider>
 	)
 }
