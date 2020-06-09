@@ -29,9 +29,68 @@ const styles = makeStyles((theme: Theme) =>
 		greeting: {
 			color: 'white',
 			fontSize: '1.5em',
-			width: '9.5em',
+			width: '10em',
 			margin: 'auto',
 			marginTop: '25vh',
+		},
+		photo: {
+			width: '100%',
+			height: 'auto',
+		},
+		leftFrame: {
+			position: 'fixed',
+			top: 0,
+			left: 0,
+			bottom: 0,
+			height: '100vh',
+			width: '40vw',
+			backgroundColor: 'rgba(0, 191, 199, 0.4)',
+			animationName: `$leftFrameAnimation`,
+			animationDuration: '3s',
+		},
+		'@keyframes leftFrameAnimation': {
+			'0%': {
+				width: '100vw',
+				backgroundColor: 'white',
+			},
+			'50%': {
+				width: '100vw',
+				backgroundColor: 'rgba(0, 191, 199, 0.4)',
+			},
+			'70%': {
+				width: '36vw',
+			},
+			'100%': {
+				width: '40vw',
+				backgroundColor: 'rgba(0, 191, 199, 0.4)',
+			},
+		},
+		triangle: {
+			position: 'absolute',
+			left: '40vw',
+			bottom: 0,
+			width: 0,
+			height: 0,
+			borderTop: '50vh solid transparent',
+			borderLeft: '20vw solid rgba(0, 191, 199, 0.4)',
+			borderBottom: '50vh solid transparent',
+			animationName: `$triangleAnimation`,
+			animationDuration: '3s',
+			zIndex: -1,
+		},
+		'@keyframes triangleAnimation': {
+			'0%': {
+				left: '100vw',
+			},
+			'50%': {
+				left: '100vw',
+			},
+			'70%': {
+				left: '36vw',
+			},
+			'100%': {
+				left: '40vw',
+			},
 		},
 	}),
 )

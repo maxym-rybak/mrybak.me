@@ -3,7 +3,7 @@ import { createMuiTheme, Theme } from '@material-ui/core/styles'
 const useTheme = (): Theme => {
 	return createMuiTheme({
 		typography: {
-			fontFamily: ['Montserrat-Medium', 'Roboto', '"Helvetica Neue"', 'sans-serif'].join(','),
+			fontFamily: ['Led-Sled', 'Montserrat-Medium', 'Roboto', '"Helvetica Neue"', 'sans-serif'].join(','),
 		},
 		overrides: {
 			MuiCssBaseline: {
@@ -16,6 +16,10 @@ const useTheme = (): Theme => {
 						{
 							fontFamily: 'Montserrat-Medium',
 							src: 'url(/fonts/Montserrat/Montserrat-Medium.ttf)',
+						},
+						{
+							fontFamily: 'Led-Sled',
+							src: 'url(/fonts/ModernLcd7-jda7.ttf)',
 						},
 					],
 				},
