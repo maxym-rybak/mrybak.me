@@ -27,15 +27,48 @@ const styles = makeStyles((theme: Theme) =>
 			zIndex: -1,
 		},
 		greeting: {
-			color: 'white',
+			color: '#EDFFD9',
 			fontSize: '1.5em',
-			width: '10em',
-			margin: 'auto',
-			marginTop: '25vh',
+			width: '100%',
+			paddingLeft: '0.5em',
+			paddingTop: '0.5em',
 		},
 		photo: {
 			width: '100%',
 			height: 'auto',
+			border: '2px solid #EDFFD9',
+			animationName: `$appearingAnimation`,
+			animationDuration: '4s',
+			opacity: 1,
+		},
+		line: {
+			height: '15em',
+			width: '3px',
+			backgroundColor: '#E5FACF',
+			marginBottom: '3em',
+			animationName: `$appearingAnimation`,
+			animationDuration: '4s',
+			opacity: 1,
+		},
+		chip: { width: '100%', animationName: `$appearingAnimation`, animationDuration: '4s', opacity: 1 },
+		topChip: {
+			width: '5em',
+			height: '5em',
+			position: 'absolute',
+			animationName: `$appearingAnimation`,
+			animationDuration: '4s',
+			opacity: 1,
+		},
+		'@keyframes appearingAnimation': {
+			'0%': {
+				opacity: 0,
+			},
+			'50%': {
+				opacity: 0,
+			},
+			'100%': {
+				opacity: 1,
+			},
 		},
 		leftFrame: {
 			position: 'fixed',
@@ -48,6 +81,7 @@ const styles = makeStyles((theme: Theme) =>
 			animationName: `$leftFrameAnimation`,
 			animationDuration: '3s',
 		},
+		leftFrameContent: { display: 'flex', alignItems: 'center', width: '50vw', height: '100%' },
 		'@keyframes leftFrameAnimation': {
 			'0%': {
 				width: '100vw',
@@ -91,6 +125,23 @@ const styles = makeStyles((theme: Theme) =>
 			'100%': {
 				left: '40vw',
 			},
+		},
+		socialLinks: {
+			position: 'fixed',
+			top: 0,
+			right: 0,
+			height: '100vh',
+			width: '10em',
+			display: 'flex',
+			flexFlow: 'column',
+			justifyContent: 'center',
+			paddingBottom: '10vh',
+		},
+		sociaLinksItem: {
+			padding: '1em',
+			width: '5em',
+			animationName: `$appearingAnimation`,
+			animationDuration: '3s',
 		},
 	}),
 )

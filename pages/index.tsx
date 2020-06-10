@@ -13,7 +13,7 @@ const IndexPage: React.FC = () => {
 	React.useEffect(() => {
 		const options: TypedOptions = {
 			strings: ["HI! I'M MAXYM RYBAK"],
-			typeSpeed: 60,
+			typeSpeed: 50,
 			startDelay: 2500,
 			showCursor: false,
 		}
@@ -22,8 +22,8 @@ const IndexPage: React.FC = () => {
 		}
 		const options2: TypedOptions = {
 			strings: ['FULL-STACK WEB DEVELOPER'],
-			typeSpeed: 60,
-			startDelay: 4500,
+			typeSpeed: 50,
+			startDelay: 4000,
 			showCursor: false,
 		}
 		if (paragraph2Ref.current) {
@@ -37,20 +37,34 @@ const IndexPage: React.FC = () => {
 			<img src='/images/background.jpg' className={cl.fullScreanImg}></img>
 			<div className={cl.backdrop} />
 			<div className={cl.leftFrame}>
-				{/* <Grid container alignItems='center'> */}
-				{/* <Grid item xs={6}> */}
-				<div style={{ display: 'flex', alignItems: 'center', width: '50vw', height: '100%' }}>
-					<img src='/images/me.png' className={cl.photo}></img>
-					{/* </Grid> */}
-					{/* <Grid item sx={6}> */}
-					<div className={cl.greeting}>
-						<span ref={paragraphRef} id='typed-text'></span>
-						<p ref={paragraph2Ref} id='typed-text2'></p>
-					</div>
+				<img src='/images/chip.png' className={cl.topChip}></img>
+				<div className={cl.leftFrameContent}>
+					<Grid container style={{ paddingBottom: '3em' }}>
+						<Grid item xs={6}>
+							<img src='/images/me.png' className={cl.photo}></img>
+						</Grid>
+						<Grid item xs={2}>
+							<img src='/images/chip.png' className={cl.chip}></img>
+						</Grid>
+						<Grid item xs={4}>
+							<div className={cl.greeting}>
+								<span ref={paragraphRef} id='typed-text2'></span>
+								<p ref={paragraph2Ref} id='typed-text2'></p>
+							</div>
+						</Grid>
+					</Grid>
 				</div>
-
-				{/* </Grid> */}
-				{/* </Grid> */}
+				<div className={cl.socialLinks}>
+					<a href='https://github.com/hurubashi' target='_blank'>
+						<img src='/images/github.svg' className={cl.sociaLinksItem}></img>
+					</a>
+					<a href='https://www.facebook.com/hurubashi/' target='_blank'>
+						<img src='/images/facebook.svg' className={cl.sociaLinksItem}></img>
+					</a>
+					<a href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/' target='_blank'>
+						<img src='/images/linkedin.svg' className={cl.sociaLinksItem}></img>
+					</a>
+				</div>
 			</div>
 			<div className={cl.triangle} />
 		</Layout>
