@@ -30,15 +30,17 @@ const styles = makeStyles((theme: Theme) =>
 			color: '#EDFFD9',
 			fontSize: '1.5em',
 			width: '100%',
-			paddingLeft: '0.5em',
-			paddingTop: '0.5em',
+			height: '100%',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
 		},
 		photo: {
 			width: '100%',
 			height: 'auto',
 			border: '2px solid #EDFFD9',
 			animationName: `$appearingAnimation`,
-			animationDuration: '4s',
+			animationDuration: '2s',
 			opacity: 1,
 		},
 		line: {
@@ -47,23 +49,23 @@ const styles = makeStyles((theme: Theme) =>
 			backgroundColor: '#E5FACF',
 			marginBottom: '3em',
 			animationName: `$appearingAnimation`,
-			animationDuration: '4s',
+			animationDuration: '2s',
 			opacity: 1,
 		},
-		chip: { width: '100%', animationName: `$appearingAnimation`, animationDuration: '4s', opacity: 1 },
+		chip: { width: '100%', animationName: `$appearingAnimation`, animationDuration: '3s', opacity: 1 },
 		topChip: {
 			width: '5em',
 			height: '5em',
 			position: 'absolute',
 			animationName: `$appearingAnimation`,
-			animationDuration: '4s',
+			animationDuration: '2s',
 			opacity: 1,
 		},
 		'@keyframes appearingAnimation': {
 			'0%': {
 				opacity: 0,
 			},
-			'50%': {
+			'25%': {
 				opacity: 0,
 			},
 			'100%': {
@@ -72,22 +74,23 @@ const styles = makeStyles((theme: Theme) =>
 		},
 		leftFrame: {
 			position: 'fixed',
-			top: 0,
+			top: '10vh',
 			left: 0,
-			bottom: 0,
-			height: '100vh',
+			bottom: '10vh',
+			height: '80vh',
 			width: '40vw',
 			backgroundColor: 'rgba(0, 191, 199, 0.4)',
 			animationName: `$leftFrameAnimation`,
-			animationDuration: '3s',
+			animationDuration: '1.5s',
+			zIndex: -1,
 		},
-		leftFrameContent: { display: 'flex', alignItems: 'center', width: '50vw', height: '100%' },
+		leftFrameContent: { alignItems: 'center', height: 'calc(100vh - 10em)', display: 'flex' },
 		'@keyframes leftFrameAnimation': {
 			'0%': {
 				width: '100vw',
 				backgroundColor: 'white',
 			},
-			'50%': {
+			'25%': {
 				width: '100vw',
 				backgroundColor: 'rgba(0, 191, 199, 0.4)',
 			},
@@ -102,21 +105,21 @@ const styles = makeStyles((theme: Theme) =>
 		triangle: {
 			position: 'absolute',
 			left: '40vw',
-			bottom: 0,
+			bottom: '10vh',
 			width: 0,
 			height: 0,
-			borderTop: '50vh solid transparent',
+			borderTop: '40vh solid transparent',
 			borderLeft: '20vw solid rgba(0, 191, 199, 0.4)',
-			borderBottom: '50vh solid transparent',
+			borderBottom: '40vh solid transparent',
 			animationName: `$triangleAnimation`,
-			animationDuration: '3s',
+			animationDuration: '1.5s',
 			zIndex: -1,
 		},
 		'@keyframes triangleAnimation': {
 			'0%': {
 				left: '100vw',
 			},
-			'50%': {
+			'25%': {
 				left: '100vw',
 			},
 			'70%': {
@@ -127,21 +130,18 @@ const styles = makeStyles((theme: Theme) =>
 			},
 		},
 		socialLinks: {
-			position: 'fixed',
-			top: 0,
-			right: 0,
-			height: '100vh',
+			height: 'calc(100vh - 10em)',
 			width: '10em',
 			display: 'flex',
 			flexFlow: 'column',
 			justifyContent: 'center',
-			paddingBottom: '10vh',
+			alignItems: 'end',
 		},
 		sociaLinksItem: {
-			padding: '1em',
+			margin: '1em',
 			width: '5em',
 			animationName: `$appearingAnimation`,
-			animationDuration: '3s',
+			animationDuration: '2s',
 		},
 	}),
 )
