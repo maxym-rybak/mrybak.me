@@ -5,17 +5,17 @@ const styles = makeStyles((theme: Theme) =>
 		navBar: {
 			display: 'flex',
 			justifyContent: 'flex-end',
-			margin: '1em',
+			margin: '1em 0',
 		},
 		navItem: {
 			margin: '0.5em',
 			textDecoration: 'none',
 			padding: '0.2em',
-			color: 'white',
+			color: '#EDFFD9',
 			textTransform: 'uppercase',
 		},
 		active: {
-			borderBottom: '2px solid white',
+			borderBottom: '2px solid #EDFFD9',
 		},
 	}),
 )

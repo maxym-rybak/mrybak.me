@@ -11,7 +11,7 @@ const IndexPage: React.FC = () => {
 
 	React.useEffect(() => {
 		const options: TypedOptions = {
-			strings: ['This is my about page'],
+			strings: ['You can contact me with mail'],
 			typeSpeed: 50,
 			startDelay: 1500,
 			showCursor: false,
@@ -20,9 +20,9 @@ const IndexPage: React.FC = () => {
 			new Typed(paragraphRef.current?.tagName, options)
 		}
 		const options2: TypedOptions = {
-			strings: ['Dont try to peek any personal Stalker...'],
+			strings: ['or by filling out this form'],
 			typeSpeed: 50,
-			startDelay: 3000,
+			startDelay: 3500,
 			showCursor: false,
 		}
 		if (paragraph2Ref.current) {
@@ -52,17 +52,7 @@ const IndexPage: React.FC = () => {
 						</Grid>
 					</Grid>
 				</div>
-				<div className={cl.socialLinks}>
-					<a href='https://github.com/hurubashi' target='_blank'>
-						<img src='/images/github.svg' className={cl.sociaLinksItem}></img>
-					</a>
-					<a href='https://www.facebook.com/hurubashi/' target='_blank'>
-						<img src='/images/facebook.svg' className={cl.sociaLinksItem}></img>
-					</a>
-					<a href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/' target='_blank'>
-						<img src='/images/linkedin.svg' className={cl.sociaLinksItem}></img>
-					</a>
-				</div>
+				<div>Contact form</div>
 			</div>
 			<div className={cl.triangle} />
 		</Layout>

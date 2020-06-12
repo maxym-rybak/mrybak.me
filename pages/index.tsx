@@ -1,6 +1,7 @@
 import React from 'react'
 import Typed, { TypedOptions } from 'typed.js'
-import Link from 'next/link'
+import Grid from '@material-ui/core/Grid'
+import { IconButton } from '@material-ui/core'
 import Layout from '../components/Layout'
 import styles from './styles'
 
@@ -11,9 +12,9 @@ const IndexPage: React.FC = () => {
 
 	React.useEffect(() => {
 		const options: TypedOptions = {
-			strings: [`Hello, I'm Maxym`],
-			typeSpeed: 60,
-			startDelay: 500,
+			strings: ["HI! I'M MAXYM RYBAK"],
+			typeSpeed: 50,
+			startDelay: 1500,
 			showCursor: false,
 		}
 		if (paragraphRef.current) {
@@ -21,13 +22,12 @@ const IndexPage: React.FC = () => {
 		}
 		const options2: TypedOptions = {
 			strings: ['FULL-STACK WEB DEVELOPER'],
-			typeSpeed: 60,
-			startDelay: 2000,
+			typeSpeed: 50,
+			startDelay: 3000,
 			showCursor: false,
 		}
 		if (paragraph2Ref.current) {
 			new Typed(paragraph2Ref.current?.tagName, options2)
-			console.log(`tagname: ${paragraphRef.current?.tagName}`)
 		}
 	}, [])
 
@@ -35,10 +35,39 @@ const IndexPage: React.FC = () => {
 		<Layout title='Maxym Rybak personal page'>
 			<img src='/images/background.jpg' className={cl.fullScreanImg}></img>
 			<div className={cl.backdrop} />
-			<div className={cl.greeting}>
-				<span ref={paragraphRef} id='typed-text'></span>
-				<p ref={paragraph2Ref} id='typed-text2'></p>
-			</div>
+			<div className={cl.leftFrame}>{/* <img src='/images/chip.png' className={cl.topChip}></img> */}</div>
+			<div className={cl.triangle} />
+			<Grid container>
+				<Grid item xs={6} className={cl.leftFrameContent}>
+					<Grid container spacing={1}>
+						<Grid item xs={6} style={{ padding: '1em' }}>
+							<img src='/images/me.png' className={cl.photo}></img>
+						</Grid>
+						{/* <Grid item xs={2}> */}
+						{/* <img src='/images/chip.png' className={cl.chip}></img> */}
+						{/* </Grid> */}
+						<Grid item xs={6}>
+							<div className={cl.greeting}>
+								<span ref={paragraphRef} id='typed-text2'></span>
+								<p ref={paragraph2Ref} id='typed-text2'></p>
+							</div>
+						</Grid>
+					</Grid>
+				</Grid>
+				<Grid item xs={6} className={cl.socialLinks}>
+					<IconButton href='https://github.com/hurubashi' target='_blank' style={{ width: '3em', height: '3em' }}>
+						{/* <a href='https://github.com/hurubashi' target='_blank'> */}
+						<img src='/images/github.svg'></img>
+						{/* </a> */}
+					</IconButton>
+					<a href='https://www.facebook.com/hurubashi/' target='_blank'>
+						<img src='/images/facebook.svg' className={cl.sociaLinksItem}></img>
+					</a>
+					<a href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/' target='_blank'>
+						<img src='/images/linkedin.svg' className={cl.sociaLinksItem}></img>
+					</a>
+				</Grid>
+			</Grid>
 		</Layout>
 	)
 }
