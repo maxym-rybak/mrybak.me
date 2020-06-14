@@ -43,9 +43,6 @@ const IndexPage: React.FC = () => {
 						<Grid item xs={6} style={{ padding: '1em' }}>
 							<img src='/images/me.png' className={cl.photo}></img>
 						</Grid>
-						{/* <Grid item xs={2}> */}
-						{/* <img src='/images/chip.png' className={cl.chip}></img> */}
-						{/* </Grid> */}
 						<Grid item xs={6}>
 							<div className={cl.greeting}>
 								<span ref={paragraphRef} id='typed-text2'></span>
@@ -55,17 +52,18 @@ const IndexPage: React.FC = () => {
 					</Grid>
 				</Grid>
 				<Grid item xs={6} className={cl.socialLinks}>
-					<IconButton href='https://github.com/hurubashi' target='_blank' style={{ width: '3em', height: '3em' }}>
-						{/* <a href='https://github.com/hurubashi' target='_blank'> */}
+					<IconButton href='https://github.com/hurubashi' target='_blank' className={cl.sociaLinksItem}>
 						<img src='/images/github.svg'></img>
-						{/* </a> */}
 					</IconButton>
-					<a href='https://www.facebook.com/hurubashi/' target='_blank'>
-						<img src='/images/facebook.svg' className={cl.sociaLinksItem}></img>
-					</a>
-					<a href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/' target='_blank'>
-						<img src='/images/linkedin.svg' className={cl.sociaLinksItem}></img>
-					</a>
+					<IconButton href='https://www.facebook.com/hurubashi/' target='_blank' className={cl.sociaLinksItem}>
+						<img src='/images/facebook.svg'></img>
+					</IconButton>
+					<IconButton
+						href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/'
+						target='_blank'
+						className={cl.sociaLinksItem}>
+						<img src='/images/linkedin.svg'></img>
+					</IconButton>
 				</Grid>
 			</Grid>
 		</Layout>

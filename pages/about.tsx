@@ -2,6 +2,7 @@ import React from 'react'
 import Typed, { TypedOptions } from 'typed.js'
 import Grid from '@material-ui/core/Grid'
 import Layout from '../components/Layout'
+import { IconButton } from '@material-ui/core'
 import styles from './styles'
 
 const IndexPage: React.FC = () => {
@@ -34,37 +35,37 @@ const IndexPage: React.FC = () => {
 		<Layout title='Maxym Rybak personal page'>
 			<img src='/images/background.jpg' className={cl.fullScreanImg}></img>
 			<div className={cl.backdrop} />
-			<div className={cl.leftFrame}>
-				<img src='/images/chip.png' className={cl.topChip}></img>
-				<div className={cl.leftFrameContent}>
-					<Grid container style={{ paddingBottom: '3em' }}>
-						<Grid item xs={6}>
+			<div className={cl.leftFrame}>{/* <img src='/images/chip.png' className={cl.topChip}></img> */}</div>
+			<div className={cl.triangle} />
+			<Grid container>
+				<Grid item xs={6} className={cl.leftFrameContent}>
+					<Grid container spacing={1}>
+						<Grid item xs={6} style={{ padding: '1em' }}>
 							<img src='/images/me.png' className={cl.photo}></img>
 						</Grid>
-						<Grid item xs={2}>
-							<img src='/images/chip.png' className={cl.chip}></img>
-						</Grid>
-						<Grid item xs={4}>
+						<Grid item xs={6}>
 							<div className={cl.greeting}>
 								<span ref={paragraphRef} id='typed-text2'></span>
 								<p ref={paragraph2Ref} id='typed-text2'></p>
 							</div>
 						</Grid>
 					</Grid>
-				</div>
-				<div className={cl.socialLinks}>
-					<a href='https://github.com/hurubashi' target='_blank'>
-						<img src='/images/github.svg' className={cl.sociaLinksItem}></img>
-					</a>
-					<a href='https://www.facebook.com/hurubashi/' target='_blank'>
-						<img src='/images/facebook.svg' className={cl.sociaLinksItem}></img>
-					</a>
-					<a href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/' target='_blank'>
-						<img src='/images/linkedin.svg' className={cl.sociaLinksItem}></img>
-					</a>
-				</div>
-			</div>
-			<div className={cl.triangle} />
+				</Grid>
+				<Grid item xs={6} className={cl.socialLinks}>
+					<IconButton href='https://github.com/hurubashi' target='_blank' className={cl.sociaLinksItem}>
+						<img src='/images/github.svg'></img>
+					</IconButton>
+					<IconButton href='https://www.facebook.com/hurubashi/' target='_blank' className={cl.sociaLinksItem}>
+						<img src='/images/facebook.svg'></img>
+					</IconButton>
+					<IconButton
+						href='https://www.linkedin.com/in/maxym-rybak-ba05b7162/'
+						target='_blank'
+						className={cl.sociaLinksItem}>
+						<img src='/images/linkedin.svg'></img>
+					</IconButton>
+				</Grid>
+			</Grid>
 		</Layout>
 	)
 }

@@ -138,10 +138,14 @@ const styles = makeStyles((theme: Theme) =>
 			alignItems: 'end',
 		},
 		sociaLinksItem: {
-			margin: '1em',
-			width: '5em',
+			width: '3em',
+			height: '3em',
+			padding: '0.6em',
 			animationName: `$appearingAnimation`,
 			animationDuration: '2s',
+			'&:hover': {
+				border: '0.5px dashed #edffd9',
+			},
 		},
 	}),
 )

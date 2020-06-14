@@ -13,6 +13,9 @@ const styles = makeStyles((theme: Theme) =>
 			padding: '0.2em',
 			color: '#EDFFD9',
 			textTransform: 'uppercase',
+			'&:hover': {
+				borderBottom: '2px solid #EDFFD9',
+			},
 		},
 		active: {
 			borderBottom: '2px solid #EDFFD9',
