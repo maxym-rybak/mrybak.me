@@ -3,7 +3,7 @@ import Typed, { TypedOptions } from 'typed.js'
 import Grid from '@material-ui/core/Grid'
 import Layout from '../components/Layout'
 import { IconButton } from '@material-ui/core'
-import styles from './styles'
+import styles from '../styling/styles'
 
 const IndexPage: React.FC = () => {
 	const paragraphRef = React.useRef<HTMLParagraphElement>(null)

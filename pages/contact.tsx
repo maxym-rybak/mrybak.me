@@ -1,9 +1,8 @@
 import React from 'react'
 import Typed, { TypedOptions } from 'typed.js'
-import Grid from '@material-ui/core/Grid'
+import { Grid, Hidden } from '@material-ui/core'
 import Layout from '../components/Layout'
-import { IconButton } from '@material-ui/core'
-import styles from './styles'
+import styles from '../styling/styles'
 
 const IndexPage: React.FC = () => {
 	const paragraphRef = React.useRef<HTMLParagraphElement>(null)
@@ -12,7 +11,7 @@ const IndexPage: React.FC = () => {
 
 	React.useEffect(() => {
 		const options: TypedOptions = {
-			strings: ['You can contact me with mail'],
+			strings: ['You can contact me with email'],
 			typeSpeed: 50,
 			startDelay: 1500,
 			showCursor: false,
@@ -21,7 +20,7 @@ const IndexPage: React.FC = () => {
 			new Typed(paragraphRef.current?.tagName, options)
 		}
 		const options2: TypedOptions = {
-			strings: ['or by filling out this form'],
+			strings: ['maxymrybak@gmail.com'],
 			typeSpeed: 50,
 			startDelay: 3500,
 			showCursor: false,
@@ -35,23 +34,26 @@ const IndexPage: React.FC = () => {
 		<Layout title='Maxym Rybak personal page'>
 			<img src='/images/background.jpg' className={cl.fullScreanImg}></img>
 			<div className={cl.backdrop} />
-			<div className={cl.leftFrame}>{/* <img src='/images/chip.png' className={cl.topChip}></img> */}</div>
-			<div className={cl.triangle} />
+			<Hidden xsDown>
+				<div className={cl.leftFrame} />
+				<div className={cl.triangle} />
+			</Hidden>
 			<Grid container>
-				<Grid item xs={6} className={cl.leftFrameContent}>
+				<Grid item xs={12} sm={6} className={cl.leftFrameContent}>
 					<Grid container spacing={1}>
-						<Grid item xs={6} style={{ padding: '1em' }}>
+						<Grid item xs={6} sm={6} style={{ padding: '1em' }}>
 							<img src='/images/me.png' className={cl.photo}></img>
 						</Grid>
-						<Grid item xs={6}>
+						<Grid item xs={6} sm={6}>
 							<div className={cl.greeting}>
 								<span ref={paragraphRef} id='typed-text2'></span>
-								<p ref={paragraph2Ref} id='typed-text2'></p>
 							</div>
 						</Grid>
 					</Grid>
 				</Grid>
-				<Grid item xs={6} className={cl.socialLinks}></Grid>
+				<Grid item xs={12} sm={6} className={cl.socialLinks}>
+					<p ref={paragraph2Ref} id='typed-text2' style={{ fontSize: '1.5em' }}></p>
+				</Grid>
 			</Grid>
 		</Layout>
 	)

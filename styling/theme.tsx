@@ -1,18 +1,19 @@
-import { createMuiTheme, Theme, PaletteColorOptions } from '@material-ui/core/styles'
+import { createMuiTheme, Theme } from '@material-ui/core/styles'
+import { PaletteOptions } from '@material-ui/core/styles/createPalette'
 
 const palette: PaletteOptions = {
 	primary: {
-		main: '#FE5D26',
+		main: '#EDFFD9',
 	},
 	secondary: {
-		main: '#19857b',
+		main: '#002549',
 	},
 	background: {
-		default: '#1a191e',
-		paper: '#1a191e',
+		default: 'rgba(0, 191, 199, 0.6)',
+		paper: 'rgba(0, 191, 199, 1)',
 	},
 	text: {
-		primary: '#fff',
+		primary: '#EDFFD9',
 		secondary: 'rgba(255, 255, 255, 0.7)',
 		disabled: 'rgba(255, 255, 255, 0.5)',
 		hint: 'rgba(255, 255, 255, 0.5)',

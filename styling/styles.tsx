@@ -1,5 +1,6 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 
+const leftPanelColor = 'rgba(0, 191, 199, 0.4)'
 const styles = makeStyles((theme: Theme) =>
 	createStyles({
 		fullScreanImg: {
@@ -27,7 +28,6 @@ const styles = makeStyles((theme: Theme) =>
 			zIndex: -1,
 		},
 		greeting: {
-			color: '#EDFFD9',
 			fontSize: '1.5em',
 			width: '100%',
 			height: '100%',
@@ -38,16 +38,7 @@ const styles = makeStyles((theme: Theme) =>
 		photo: {
 			width: '100%',
 			height: 'auto',
-			border: '2px solid #EDFFD9',
-			animationName: `$appearingAnimation`,
-			animationDuration: '2s',
-			opacity: 1,
-		},
-		line: {
-			height: '15em',
-			width: '3px',
-			backgroundColor: '#E5FACF',
-			marginBottom: '3em',
+			border: `2px solid ${theme.palette.text.primary}`,
 			animationName: `$appearingAnimation`,
 			animationDuration: '2s',
 			opacity: 1,
@@ -79,12 +70,19 @@ const styles = makeStyles((theme: Theme) =>
 			bottom: '10vh',
 			height: '80vh',
 			width: '40vw',
-			backgroundColor: 'rgba(0, 191, 199, 0.4)',
+			backgroundColor: leftPanelColor,
 			animationName: `$leftFrameAnimation`,
 			animationDuration: '1.5s',
 			zIndex: -1,
 		},
-		leftFrameContent: { alignItems: 'center', height: 'calc(100vh - 10em)', display: 'flex' },
+		leftFrameContent: {
+			alignItems: 'center',
+			height: 'calc(100vh - 10em)',
+			display: 'flex',
+			[theme.breakpoints.down('xs')]: {
+				height: 'auto',
+			},
+		},
 		'@keyframes leftFrameAnimation': {
 			'0%': {
 				width: '100vw',
@@ -92,14 +90,14 @@ const styles = makeStyles((theme: Theme) =>
 			},
 			'25%': {
 				width: '100vw',
-				backgroundColor: 'rgba(0, 191, 199, 0.4)',
+				backgroundColor: leftPanelColor,
 			},
 			'70%': {
 				width: '36vw',
 			},
 			'100%': {
 				width: '40vw',
-				backgroundColor: 'rgba(0, 191, 199, 0.4)',
+				backgroundColor: leftPanelColor,
 			},
 		},
 		triangle: {
@@ -109,7 +107,7 @@ const styles = makeStyles((theme: Theme) =>
 			width: 0,
 			height: 0,
 			borderTop: '40vh solid transparent',
-			borderLeft: '20vw solid rgba(0, 191, 199, 0.4)',
+			borderLeft: `20vw solid ${leftPanelColor}`,
 			borderBottom: '40vh solid transparent',
 			animationName: `$triangleAnimation`,
 			animationDuration: '1.5s',
@@ -136,6 +134,10 @@ const styles = makeStyles((theme: Theme) =>
 			flexFlow: 'column',
 			justifyContent: 'center',
 			alignItems: 'end',
+			[theme.breakpoints.down('xs')]: {
+				flexFlow: 'row',
+				height: 'auto',
+			},
 		},
 		sociaLinksItem: {
 			width: '3em',
@@ -144,7 +146,7 @@ const styles = makeStyles((theme: Theme) =>
 			animationName: `$appearingAnimation`,
 			animationDuration: '2s',
 			'&:hover': {
-				border: '0.5px dashed #edffd9',
+				border: `0.5px dashed ${theme.palette.text.primary}`,
 			},
 		},
 	}),
