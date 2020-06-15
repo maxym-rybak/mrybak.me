@@ -34,6 +34,9 @@ const styles = makeStyles((theme: Theme) =>
 			display: 'flex',
 			flexDirection: 'column',
 			justifyContent: 'center',
+			[theme.breakpoints.down('sm')]: {
+				fontSize: '1.3em',
+			},
 		},
 		photo: {
 			width: '100%',
@@ -71,22 +74,24 @@ const styles = makeStyles((theme: Theme) =>
 			height: '80vh',
 			width: '40vw',
 			backgroundColor: leftPanelColor,
-			animationName: `$leftFrameAnimation`,
-			animationDuration: '1.5s',
+			[theme.breakpoints.up('sm')]: {
+				animationName: `$leftFrameAnimation`,
+				animationDuration: '1.5s',
+			},
 			zIndex: -1,
 		},
 		leftFrameContent: {
 			alignItems: 'center',
 			height: 'calc(100vh - 10em)',
 			display: 'flex',
-			[theme.breakpoints.down('xs')]: {
+			[theme.breakpoints.down('sm')]: {
 				height: 'auto',
 			},
 		},
 		'@keyframes leftFrameAnimation': {
 			'0%': {
 				width: '100vw',
-				backgroundColor: 'white',
+				backgroundColor: leftPanelColor,
 			},
 			'25%': {
 				width: '100vw',
@@ -133,8 +138,8 @@ const styles = makeStyles((theme: Theme) =>
 			display: 'flex',
 			flexFlow: 'column',
 			justifyContent: 'center',
-			alignItems: 'end',
-			[theme.breakpoints.down('xs')]: {
+			alignItems: 'flex-end',
+			[theme.breakpoints.down('sm')]: {
 				flexFlow: 'row',
 				height: 'auto',
 			},
@@ -147,6 +152,12 @@ const styles = makeStyles((theme: Theme) =>
 			animationDuration: '2s',
 			'&:hover': {
 				border: `0.5px dashed ${theme.palette.text.primary}`,
+			},
+		},
+		contacts: {
+			fontSize: '1.5em',
+			[theme.breakpoints.down('sm')]: {
+				fontSize: '1.2em',
 			},
 		},
 	}),

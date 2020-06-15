@@ -11,8 +11,8 @@ const IndexPage: React.FC = () => {
 
 	React.useEffect(() => {
 		const options: TypedOptions = {
-			strings: ['You can contact me with email'],
-			typeSpeed: 50,
+			strings: ['You can contact me by email or telegram'],
+			typeSpeed: 30,
 			startDelay: 1500,
 			showCursor: false,
 		}
@@ -20,8 +20,8 @@ const IndexPage: React.FC = () => {
 			new Typed(paragraphRef.current?.tagName, options)
 		}
 		const options2: TypedOptions = {
-			strings: ['maxymrybak@gmail.com'],
-			typeSpeed: 50,
+			strings: ['email - maxymrybak@gmail.com<br>telegram - @maxymrybak'],
+			typeSpeed: 40,
 			startDelay: 3500,
 			showCursor: false,
 		}
@@ -34,25 +34,25 @@ const IndexPage: React.FC = () => {
 		<Layout title='Maxym Rybak personal page'>
 			<img src='/images/background.jpg' className={cl.fullScreanImg}></img>
 			<div className={cl.backdrop} />
-			<Hidden xsDown>
+			<Hidden smDown>
 				<div className={cl.leftFrame} />
 				<div className={cl.triangle} />
 			</Hidden>
 			<Grid container>
-				<Grid item xs={12} sm={6} className={cl.leftFrameContent}>
+				<Grid item xs={12} md={6} className={cl.leftFrameContent}>
 					<Grid container spacing={1}>
-						<Grid item xs={6} sm={6} style={{ padding: '1em' }}>
+						<Grid item xs={6} md={6} style={{ padding: '1em' }}>
 							<img src='/images/me.png' className={cl.photo}></img>
 						</Grid>
-						<Grid item xs={6} sm={6}>
+						<Grid item xs={6} md={6}>
 							<div className={cl.greeting}>
 								<span ref={paragraphRef} id='typed-text2'></span>
 							</div>
 						</Grid>
 					</Grid>
 				</Grid>
-				<Grid item xs={12} sm={6} className={cl.socialLinks}>
-					<p ref={paragraph2Ref} id='typed-text2' style={{ fontSize: '1.5em' }}></p>
+				<Grid item xs={12} md={6} className={cl.socialLinks}>
+					<p ref={paragraph2Ref} id='typed-text2' className={cl.contacts}></p>
 				</Grid>
 			</Grid>
 		</Layout>

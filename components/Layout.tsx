@@ -38,9 +38,9 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 
 	const normal = (
 		<nav className={cl.navBar}>
-			{routes.map((route) => {
+			{routes.map((route, idx) => {
 				return (
-					<Link href={route.path}>
+					<Link href={route.path} key={'normal' + idx}>
 						<a className={`${cl.navItem} ${router.pathname === route.path ? cl.active : ''}`}>{route.name}</a>
 					</Link>
 				)
@@ -54,9 +54,9 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 				<MenuIcon />
 			</ButtonBase>
 			<Menu id='simple-menu' anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-				{routes.map((route) => {
+				{routes.map((route, idx) => {
 					return (
-						<MenuItem onClick={handleClose}>
+						<MenuItem onClick={handleClose} key={'moblink' + idx}>
 							<Link href={route.path}>
 								<a className={`${cl.navItem} ${router.pathname === route.path ? cl.active : ''}`}>{route.name}</a>
 							</Link>
