@@ -11,8 +11,11 @@ const styles = makeStyles((theme: Theme) =>
 			margin: '0.5em',
 			textDecoration: 'none',
 			padding: '0.2em',
-			color: '#EDFFD9',
+			color: theme.palette.text.primary,
 			textTransform: 'uppercase',
+			'&:hover': {
+				borderBottom: '2px solid #EDFFD9',
+			},
 		},
 		active: {
 			borderBottom: '2px solid #EDFFD9',
