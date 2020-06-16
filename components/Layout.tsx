@@ -35,13 +35,19 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 	const handleClose = () => {
 		setAnchorEl(null)
 	}
-
+	const playButtonSound = () => {
+		const audio = new Audio('/audio/tududu.mp3')
+		audio.load()
+		audio.play()
+	}
 	const normal = (
 		<nav className={cl.navBar}>
 			{routes.map((route, idx) => {
 				return (
 					<Link href={route.path} key={'normal' + idx}>
-						<a className={`${cl.navItem} ${router.pathname === route.path ? cl.active : ''}`}>{route.name}</a>
+						<a className={`${cl.navItem} ${router.pathname === route.path ? cl.active : ''}`} onClick={playButtonSound}>
+							{route.name}
+						</a>
 					</Link>
 				)
 			})}
@@ -58,7 +64,11 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
 					return (
 						<MenuItem onClick={handleClose} key={'moblink' + idx}>
 							<Link href={route.path}>
-								<a className={`${cl.navItem} ${router.pathname === route.path ? cl.active : ''}`}>{route.name}</a>
+								<a
+									className={`${cl.navItem} ${router.pathname === route.path ? cl.active : ''}`}
+									onClick={playButtonSound}>
+									{route.name}
+								</a>
 							</Link>
 						</MenuItem>
 					)

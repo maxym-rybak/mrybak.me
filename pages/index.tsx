@@ -12,7 +12,7 @@ const IndexPage: React.FC = () => {
 	React.useEffect(() => {
 		const options: TypedOptions = {
 			strings: ["HI! I'M MAXYM RYBAK"],
-			typeSpeed: 40,
+			typeSpeed: 50,
 			startDelay: 1500,
 			showCursor: false,
 		}
@@ -22,11 +22,27 @@ const IndexPage: React.FC = () => {
 		const options2: TypedOptions = {
 			strings: ['FULL-STACK WEB DEVELOPER'],
 			typeSpeed: 40,
-			startDelay: 2800,
+			startDelay: 2900,
 			showCursor: false,
 		}
 		if (paragraph2Ref.current) {
 			new Typed(paragraph2Ref.current?.tagName, options2)
+		}
+		const audio1 = new Audio('/audio/typing-1500.mp3')
+		audio1.load()
+		const audio2 = new Audio('/audio/typing-1500.mp3')
+		audio2.load()
+		const timeout1 = setTimeout(() => {
+			audio1.play()
+		}, 1450)
+		const timeout2 = setTimeout(() => {
+			audio2.play()
+		}, 2900)
+		return () => {
+			audio1.remove()
+			audio2.remove()
+			clearTimeout(timeout1)
+			clearTimeout(timeout2)
 		}
 	}, [])
 
