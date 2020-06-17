@@ -28,24 +28,6 @@ const IndexPage: React.FC = () => {
 		if (paragraph2Ref.current) {
 			new Typed(paragraph2Ref.current?.tagName, options2)
 		}
-
-		const audio1 = new Audio('/audio/typing-2000.mp3')
-		audio1.load()
-		const audio2 = new Audio('/audio/typing-3000.mp3')
-		audio2.load()
-		const timeout1 = setTimeout(() => {
-			audio1.play()
-		}, 1470)
-		const timeout2 = setTimeout(() => {
-			audio2.play()
-		}, 3500)
-
-		return () => {
-			audio1.remove()
-			audio2.remove()
-			clearTimeout(timeout1)
-			clearTimeout(timeout2)
-		}
 	}, [])
 
 	return (
